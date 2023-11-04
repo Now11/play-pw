@@ -1,0 +1,27 @@
+{
+	"name": "play-pw",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Now11/play-pw.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Now11/play-pw/issues"
+	},
+	"homepage": "https://github.com/Now11/play-pw#readme",
+	"dependencies": {
+		"@playwright/test": "^1.39.0",
+		"typescript": "^5.2.2"
+	},
+	"devDependencies": {
+		"@types/node": "^20.8.10"
+	}
+}
