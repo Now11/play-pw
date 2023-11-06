@@ -1,10 +1,16 @@
 {
-	"name": "play-pw",
+	"name": "@now11/play-pw",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"files": [
+		"dist"
+	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build": "rm -rf dist/ && npm run build:esm && npm run build:cjs",
+		"build:esm": "tsc",
+		"build:cjs": "tsc --module CommonJS --outDir dist/cjs"
 	},
 	"repository": {
 		"type": "git",
@@ -18,10 +24,17 @@
 	},
 	"homepage": "https://github.com/Now11/play-pw#readme",
 	"dependencies": {
-		"@playwright/test": "^1.39.0",
-		"typescript": "^5.2.2"
+		"@playwright/test": "^1.39.0"
 	},
 	"devDependencies": {
+		"typescript": "^5.2.2",
 		"@types/node": "^20.8.10"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.mjs",
+			"require": "./dist/cjs/index.js",
+			"default": "./dist/esm/index.js"
+		}
 	}
 }
